@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+    <data>
+
+        <import type="java.util.List" />
+        <variable
+            name="unitem"
+            type="com.example.myyappfortest.model.MyUnClass" />
+        <variable
+            name="hey"
+            type="java.lang.String" />
+        <variable
+            name="myhandler"
+            type="com.example.myyappfortest.model.MyMethodHandler" />
+        <variable
+            name="mypojo"
+            type="com.example.myyappfortest.model.MyPojo" />
+
+
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity">
+
+    <EditText
+        android:id="@+id/etvalue"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn"
+
+        android:text="MainActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toBottomOf="@+id/etvalue"
+        app:layout_constraintLeft_toLeftOf="@+id/etvalue"/>
+
+    <TextView
+        android:id="@+id/mytv"
+        app:layout_constraintLeft_toLeftOf="@+id/btn"
+        app:layout_constraintTop_toBottomOf="@+id/btn"
+        android:layout_marginTop="@android:dimen/notification_large_icon_height"
+
+        android:text="@{mypojo.body}"
+        android:onClick="myMethods"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="@{unitem.mp.first}"
+        app:layout_constraintLeft_toLeftOf="@+id/mytv"
+        app:layout_constraintTop_toBottomOf="@+id/mytv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+<!--android:text="@{unitem.mp.first}"-->
+<!--android:onClick="@{myhandler::myMethod}"-->
+    <!--android:onClick="@{() -> myhandler.noParameterMethod(hey)}"-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:visibility="gone"
+        android:id="@+id/idList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
