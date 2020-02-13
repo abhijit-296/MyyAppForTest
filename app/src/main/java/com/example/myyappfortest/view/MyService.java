@@ -11,5 +11,6 @@ import retrofit2.http.GET;
 public interface MyService {
 
     @GET("/posts")
-    Call<List<MyPojo>> getUlist();
+    Call<List<MyPdview
+    ojo>> getUlist();
 }
